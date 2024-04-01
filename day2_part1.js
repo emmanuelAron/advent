@@ -35,8 +35,8 @@ async function filterLines() {
             }
         });
 
-        games.forEach(game => console.log(game))
-        console.log('Final sum:', sum);
+        //games.forEach(game => console.log(game))
+        console.log('Final sum (day 2 part 1):', sum);
 
     } catch (error) {
         console.error('Error reading file:', error)

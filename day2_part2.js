@@ -2,6 +2,7 @@ const readFileLines = require('./readDataFile');
 
 async function part2() {
     try {
+        
         const lines = await readFileLines('inputDay2.txt');
         let powersSum = 0;
 
@@ -46,3 +47,4 @@ async function part2() {
 
 part2();
 
+module.exports = part2;

@@ -1,5 +1,3 @@
-//const sumFromLines = require('../day1');
-//const readFileLines = require('../day1');
 const sumFromLines = require('../day1')
 
 describe('sumFromLines function', () => {

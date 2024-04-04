@@ -1,6 +1,9 @@
-describe("function day3", function() {
-    it("Compute the sum of the numbers values , in a 2D-array of one element", function() {
-        expect([["467",".",".","114",".","."]]).toBe([ [581] ]);
+const group = require('../day3');
+
+describe("function group(line)", function() {
+    it("Detects the numbers (group of digits) and convert them to an array of digits , for one input line", function() {
+        expect(group("467..114..")).toEqual([ 467, 114 ]);
     });
 });
+
 

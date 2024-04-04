@@ -1,11 +1,6 @@
 const readFileLines = require('./readDataFile');
 const file = './input.txt';
-const fs = require('fs');
-
-/* Check if c is a digit,and return true in that case */
-function isDigit(c) {
-    return c >= '0' && c <= '9';
-}
+const isDigit = require('./common')
 
 function sumFromLines(lines) {
     let sum = 0

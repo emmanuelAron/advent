@@ -28,8 +28,8 @@ function readFileLines(file) {
         readL.on('error', (error) => {
             reject(error); 
         });
+        return lines
     });
-    return lines
 }
 
 module.exports = readFileLines; 

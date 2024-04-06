@@ -7,7 +7,7 @@ describe("function group(line)", function() {
 });
 
 describe("function isSpecial(char)", function() {
-    it("Returns true when a character is different from a digit and '.' ", function(done) {
+    it("Returns true when a character is different from a digit and '.' ", function() {
         expect(isSpecial('.')).toEqual(false)
         expect(isSpecial('5')).toEqual(false)
         expect(isSpecial('#')).toEqual(true)

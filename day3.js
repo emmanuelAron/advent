@@ -1,4 +1,3 @@
-// day3
 
 const isDigit = require('./common');
 const readFileLines = require('./readDataFile');
@@ -36,57 +35,57 @@ function isSpecial(char){
 function adjacentOfchar(grid, row, col) {
     let result = [];
     let currentPos = grid[row][col]
+    console.log('current pos: ',currentPos);
     if (isDigit(currentPos)) {
 
         let south = null;
         if (row + 1 < grid.length) {
             south = grid[row + 1][col];
-            result.push(south)
+            if(isSpecial(south))
+                result.push(south)
         }
         let north = null;
         if (row - 1 >= 0) {
             north = grid[row - 1][col];
-            result.push(north);
+            if(isSpecial(north))
+                result.push(north);
         }
         let east = null;
         if (col + 1 < grid[row].length) {
             east = grid[row][col + 1];
-            result.push(east);
+            if(isSpecial(east))
+                result.push(east);
         }
         let west = null;
         if (col - 1 >= 0) {
             west = grid[row][col - 1];
-            result.push(west);
+            if(isSpecial(west))
+                result.push(west);
         }
         let southEast = null;
         if (row + 1 < grid.length && col + 1 < grid[row].length) {
             southEast = grid[row + 1][col + 1];
-            result.push(southEast);
+            if(isSpecial(southEast))
+                result.push(southEast);
         }
         let southWest = null;
         if (row + 1 < grid.length && col - 1 >= 0) {
             southWest = grid[row + 1][col - 1];
-            result.push(southWest);
+            if(isSpecial(southWest))
+                result.push(southWest);
         }
         let northEast = null;
         if (row - 1 >= 0 && col + 1 < grid[row].length) {
             northEast = grid[row - 1][col + 1];
-            result.push(northEast);
+            if(isSpecial(northEast))
+                result.push(northEast);
         }
         let northWest = null;
         if (row - 1 >= 0 && col - 1 >= 0) {
             northWest = grid[row - 1][col - 1];
-            result.push(northWest);
+            if(isSpecial(northWest))
+                result.push(northWest);
         }
-        console.log('south: ',south);
-        console.log('north: ',north);
-        console.log('east: ',east);
-        console.log('west: ', west);
-        console.log('southEast: ', southEast);
-        console.log('southWest: ', southWest);
-        console.log('northEast: ', northEast);
-        console.log('northWest: ', northWest);
-       
     }
     return result;
 }
@@ -101,10 +100,15 @@ readFileLines(file)
     .then((lines) => {
         console.log(lines);
         const grid = processFileAsGrid(lines); 
-        const result = adjacentOfchar(grid, 0, 0);
-        console.log('Result for (0, 0) :', result);
-        
+       
+        for (let i = 0; i < grid.length; i++) {
+            for (let j = 0; j < grid[i].length; j++) {
+                const result = adjacentOfchar(grid, i, j);
+                console.log(`Result for (${i}, ${j}):`, result);
+            }
+        }
     })
+        
     .catch((error) => {
         console.error(`Error while reading the file : ${error}`);
     });

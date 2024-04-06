@@ -1,6 +1,5 @@
 const readFileLines = require('./readDataFile');
-//const file = './input.txt';
-const file = './inputSmall.txt';
+const file = './input.txt';
 const isDigit = require('./common')
 
 function sumFromLines(lines) {
